@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN"
+"http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>台风实时追踪</title>
+    <style type="text/css">
+        body { background:#eef5ff; font:14px Arial; }
+        .header { background:#0066cc; color:white; padding:8px; }
+        .typhoon-list { margin:5px; }
+        .typhoon-item {
+            background:white;
+            border:1px solid #99ccff;
+            padding:10px;
+            margin-bottom:8px;
+        }
+        .intensity { 
+            display:inline-block;
+            width:60px;
+            text-align:center;
+            color:white;
+            padding:2px;
+        }
+        .td { background:#ff4444; } /* 强台风 */
+        .ts { background:#ff8844; } /* 台风 */
+        .sts { background:#44aa44; } /* 强热带风暴 */
+        .map {
+            background:#ddf; 
+            padding:5px;
+            font-family:monospace;
+            white-space:pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        🌀 台风实时路径
+        <div style="font-size:12px;">2023年第09号台风"苏拉"</div>
+    </div>
+
+    <!-- 台风列表 -->
+    <div class="typhoon-list">
+        <div class="typhoon-item">
+            <span class="intensity td">强台风</span>
+            <strong>苏拉</strong> (2309)
+            <div>中心风速：52m/s</div>
+            <div>移动方向：西北偏西</div>
+            <div>参考位置：北纬21.3° 东经117.1°</div>
+            <a href="#path">路径预测>></a>
+        </div>
+
+        <div class="typhoon-item">
+            <span class="intensity sts">强热带风暴</span>
+            <strong>达维</strong> (2310)
+            <div>中心风速：28m/s</div>
+            <div>移动方向：东北</div>
+            <div>参考位置：北纬35.2° 东经142.8°</div>
+            <a href="#path">路径预测>></a>
+        </div>
+    </div>
+
+    <!-- 路径图模拟 -->
+    <div class="map">
+北纬
+|  25° ···🌀···
+|  23° ··/
+|  21° ·/
+东经 115° 117° 119°
+    </div>
+
+    <!-- 预警信息 -->
+    <div style="background:#ffeaea; padding:8px; margin:5px;">
+        <h3>⚠️ 台风预警</h3>
+        <div style="color:#cc0000;">红色预警：预计24小时内登陆</div>
+        <div>影响区域：广东中东部沿海</div>
+        <div>最大风力：15级（阵风17级）</div>
+    </div>
+
+    <!-- 查询表单 -->
+    <form action="/search" method="get" style="padding:8px;">
+        <input type="text" name="q" placeholder="输入台风编号/名称" 
+               style="width:95%;padding:4px;"/>
+        <input type="submit" value="查询" 
+               style="width:95%;background:#06c;color:white;border:none;margin-top:5px;padding:6px;"/>
+    </form>
+</body>
+</html>
